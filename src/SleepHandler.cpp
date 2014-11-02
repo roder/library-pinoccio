@@ -20,7 +20,8 @@ ISR(SCNT_OVFL_vect) {
  * this ISR weak, so a custom sketch can still use it - but it seems
  * doing so prevents the empty ISR from being used (instead falling bad
  * to the also weak __bad_interrupt). */
-EMPTY_INTERRUPT(PCINT0_vect);
+// Commented out in order to compile SoftwareSerial.cpp
+// EMPTY_INTERRUPT(PCINT0_vect);
 
 uint32_t SleepHandler::read_sccnt() {
   // Read LL first, that will freeze the other registers for reading
